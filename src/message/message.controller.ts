@@ -1,4 +1,3 @@
-// src/messages/messages.controller.ts
 import { Controller, Post, Body } from '@nestjs/common';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { Message } from './entities/message.entity';

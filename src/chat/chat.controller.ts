@@ -1,4 +1,3 @@
-// src/chats/chats.controller.ts
 import { Controller, Post, Get, Body, Param } from '@nestjs/common';
 import { ChatService } from './chat.service';
 import { CreateChatDto } from './dto/create-chat.dto';
