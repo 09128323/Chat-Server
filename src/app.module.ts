@@ -8,11 +8,11 @@ import { MessageModule } from './message/message.module';
     imports: [
         TypeOrmModule.forRoot({
             type: 'postgres',
-            host: 'localhost', // Ваш хост
-            port: 5432, // Ваш порт
-            username: 'postgres', // Ваше имя пользователя
-            password: '123456', // Ваш пароль
-            database: 'chat_db', // Ваше имя базы данных
+            host: 'localhost',
+            port: 5432,
+            username: 'postgres',
+            password: '123456',
+            database: 'chat_db',
             synchronize: true,
             entities: [__dirname + '/**/*.entity{.ts,.js}'],
         }),

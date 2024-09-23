@@ -21,7 +21,7 @@ services:
             DATABASE_USER: chatuser
             DATABASE_PASSWORD: chatpassword
             DATABASE_DB: chatdb
-        command: ['npm', 'run', 'start:prod']
+        command: ['npm', 'run', 'start']
 
 volumes:
     db_data:
