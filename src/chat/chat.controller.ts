@@ -1,14 +1,8 @@
-import { Controller, Post, Body, Get } from '@nestjs/common';
+import { Controller, Post, Body } from '@nestjs/common';
 import { ChatService } from './chat.service';
 import { CreateChatDto } from './dto/create-chat.dto';
 import { Chat } from './entities/chat.entity';
-import {
-    ApiBody,
-    ApiOperation,
-    ApiParam,
-    ApiResponse,
-    ApiTags,
-} from '@nestjs/swagger';
+import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Чаты')
 @Controller('chats')
@@ -24,7 +18,7 @@ export class ChatController {
         return await this.chatsService.createChat(createChatDto);
     }
 
-    @Get('get')
+    @Post('get')
     @ApiOperation({ summary: 'Получить список чатов пользователя' })
     @ApiResponse({
         status: 200,
@@ -44,7 +38,7 @@ export class ChatController {
             },
         },
     })
-    async getUserChats(userId: number): Promise<Chat[]> {
+    async getUserChats(@Body('user') userId: number): Promise<Chat[]> {
         return await this.chatsService.getUserChats(userId);
     }
 }
